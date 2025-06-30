@@ -4,25 +4,7 @@
 use std::env;
 use std::fs;
 
-fn markdown_to_html(markdown: &str) -> String {
-    let mut html = String::new();
-
-    for line in markdown.lines() {
-        let trimmed = line.trim();
-
-        if trimmed.starts_with("# ") {
-            html.push_str(&format!("<h1>{}</h1>\n", &trimmed[2..]));
-        } else if trimmed.starts_with("## ") {
-            html.push_str(&format!("<h2>{}</h2>\n", &trimmed[3..]));
-        } else if trimmed.starts_with("### ") {
-            html.push_str(&format!("<h3>{}</h3>\n", &trimmed[4..]));
-        } else {
-            html.push_str(&format!("<p>{}</p>\n", trimmed));
-        }
-    }
-
-    html
-}
+use md_to_html::markdown_to_html;
 
 fn main() {
     println!("Markdown to HTML Converter");
