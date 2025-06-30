@@ -4,7 +4,7 @@
 use std::env;
 use std::fs;
 
-use md_to_html::markdown_to_html;
+use md_to_html::convert;
 
 fn main() {
     println!("Markdown to HTML Converter");
@@ -31,7 +31,7 @@ fn main() {
 
     // println!("{}", contents);
 
-    let html = markdown_to_html(&contents);
+    let html = convert(&contents);
     println!("{html}");
 
     match fs::write(&output_path, html) {
