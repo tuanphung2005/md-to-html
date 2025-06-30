@@ -1,3 +1,5 @@
+use crate::parser::toc::TableOfContents;
+
 pub struct HtmlDocument {
     content: String,
 }
@@ -14,6 +16,10 @@ impl HtmlDocument {
     }
 
     pub fn to_html(&self) -> String {
+        self.to_html_with_toc(&TableOfContents::new())
+    }
+
+    pub fn to_html_with_toc(&self, toc: &TableOfContents) -> String {
         let mut html = String::new();
         
         html.push_str("<!DOCTYPE html>\n");
@@ -26,7 +32,18 @@ impl HtmlDocument {
         html.push_str("</head>\n");
         html.push_str("<body>\n");
         
+        // toc as a sidebar
+        let toc_html = toc.generate_html();
+        if !toc_html.is_empty() {
+            html.push_str(&toc_html);
+        }
+        
+        // main content wrapper
+        html.push_str("<div class=\"toc-content\">\n");
+        html.push_str("<div class=\"content\">\n");
         html.push_str(&self.content);
+        html.push_str("</div>\n");
+        html.push_str("</div>\n");
         
         html.push_str("</body>\n");
         html.push_str("</html>\n");

@@ -1,11 +1,14 @@
 pub mod blocks;
 pub mod inline;
 pub mod lists;
+pub mod toc;
 
 use crate::html::document::HtmlDocument;
+use toc::TableOfContents;
 
 pub fn markdown_to_html(markdown: &str) -> String {
     let mut doc = HtmlDocument::new();
+    let mut toc = TableOfContents::new();
     let lines: Vec<&str> = markdown.lines().collect();
     let mut i = 0;
 
@@ -17,9 +20,10 @@ pub fn markdown_to_html(markdown: &str) -> String {
             continue;
         }
 
-        // headers
+        // headers and add to TOC
         if let Some(header) = blocks::process_header(line) {
-            doc.add_content(&header);
+            toc.add_header(&header);
+            doc.add_content(&header.html);
         }
         // unordered lists
         else if line.starts_with("- ") || line.starts_with("* ") {
@@ -42,5 +46,5 @@ pub fn markdown_to_html(markdown: &str) -> String {
         i += 1;
     }
 
-    doc.to_html()
+    doc.to_html_with_toc(&toc)
 }
