@@ -1,4 +1,5 @@
 pub mod parser;
+pub mod html;
 
 pub use parser::markdown_to_html;
 
