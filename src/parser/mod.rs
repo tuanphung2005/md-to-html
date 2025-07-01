@@ -2,6 +2,7 @@ pub mod blocks;
 pub mod inline;
 pub mod lists;
 pub mod toc;
+pub mod collapsible;
 
 use crate::html::document::HtmlDocument;
 use toc::TableOfContents;
@@ -37,6 +38,20 @@ pub fn markdown_to_html(markdown: &str) -> String {
             doc.add_content(&list_html);
             i += lines_consumed - 1;
         }
+
+        // collapsible sections
+        else if collapsible::is_collapsible_start(line) {
+            if let Some((collapsible_html, lines_consumed)) = collapsible::process_collapsible_block(&lines, i) {
+                doc.add_content(&collapsible_html);
+                i += lines_consumed - 1;
+            } else {
+                // treat as regular paragraph if collapsible parsing fails
+                let paragraph = blocks::process_paragraph(line);
+                doc.add_content(&paragraph);
+            }
+        }
+        
+
         // paragraph or inline content
         else {
             let paragraph = blocks::process_paragraph(line);

@@ -1,3 +1,6 @@
+/* TODO: SPLIT STYLES INTO COMPONENTS */
+/* THIS IS BECOMING IMPOSSIBLE TO MAINTAIN */
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     line-height: 1.6;
@@ -251,6 +254,38 @@ ol ol ol {
     list-style-type: lower-roman;
 }
 
+/* Collapsible sections */
+details {
+    margin: 1em 0;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+details summary {
+    background-color: #f8f9fa;
+    padding: 0.3em;
+    cursor: pointer;
+    font-weight: 600;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+    user-select: none;
+}
+
+details summary:hover {
+    background-color: #e9ecef;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details .details-content {
+    padding: 0;
+    background-color: #fff;
+    margin: 0 1em 0 1em;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     body {
@@ -382,5 +417,25 @@ ol ol ol {
     
     .toc-level-6 a {
         color: #aaa;
+    }
+    
+    /* Dark mode collapsible styles */
+    details {
+        border-color: #444;
+    }
+    
+    details summary {
+        background-color: #2d2d2d;
+        border-bottom-color: #444;
+        color: #fff;
+    }
+    
+    details summary:hover {
+        background-color: #3d3d3d;
+    }
+    
+    details .details-content {
+        background-color: #1a1a1a;
+        color: #e1e1e1;
     }
 }

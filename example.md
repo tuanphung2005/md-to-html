@@ -1,5 +1,12 @@
 # THIS IS EXAMPLE MARKDOWN FILE
 
+<details>
+  <summary>Collapsible Example</summary>
+    Hidden content inside a collapsible section.
+</details>
+
+# h1 THIS IS H1
+
 ## h2 THIS IS H2
 
 example content inside heading 2
