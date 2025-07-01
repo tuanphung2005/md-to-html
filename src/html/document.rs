@@ -28,7 +28,7 @@ impl HtmlDocument {
         html.push_str("<meta charset=\"UTF-8\">\n");
         html.push_str("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
         html.push_str("<title>Markdown to HTML</title>\n");
-        html.push_str("<link rel=\"stylesheet\" href=\"styles.css\">\n");
+        html.push_str("<link rel=\"stylesheet\" href=\"css/main.css\">\n");
         html.push_str("</head>\n");
         html.push_str("<body>\n");
         
