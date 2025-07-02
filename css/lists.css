@@ -23,7 +23,7 @@ li > ol {
     margin-bottom: 0;
 }
 
-/* Nested list styles */
+/* nested list styles */
 ul ul {
     list-style-type: circle;
 }

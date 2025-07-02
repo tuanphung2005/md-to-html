@@ -1,4 +1,4 @@
-/* dark mode TODO: LIGHT MODE */
+/* dark mode */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #1a1a1a;
@@ -87,5 +87,25 @@
     details .details-content {
         background-color: #1a1a1a;
         color: #e1e1e1;
+    }
+
+    /* blockquotes */
+    blockquote {
+        background-color: #2d2d2d;
+        border-left-color: #66d9ef;
+        color: #ccc;
+    }
+    
+    blockquote::before {
+        color: #66d9ef;
+    }
+    
+    blockquote blockquote {
+        background-color: #3d2d2d;
+        border-left-color: #ff6b9d;
+    }
+    
+    blockquote blockquote::before {
+        color: #ff6b9d;
     }
 }

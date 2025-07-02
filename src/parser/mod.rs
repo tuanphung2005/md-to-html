@@ -3,6 +3,7 @@ pub mod inline;
 pub mod lists;
 pub mod toc;
 pub mod collapsible;
+pub mod blockquote;
 
 use crate::html::document::HtmlDocument;
 use toc::TableOfContents;
@@ -51,6 +52,12 @@ pub fn markdown_to_html(markdown: &str) -> String {
             }
         }
         
+        // blockquotes
+        else if blockquote::is_blockquote_start(line) {
+            let (blockquote_html, lines_consumed) = blockquote::process_blockquote(&lines, i);
+            doc.add_content(&blockquote_html);
+            i += lines_consumed - 1;
+        }
 
         // paragraph or inline content
         else {
