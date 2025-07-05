@@ -46,17 +46,7 @@ To use a different theme, include it after the main stylesheet:
 
 ## Creating Custom Themes
 
-To create a custom theme, create a new CSS file that overrides the CSS custom properties:
-
-```css
-:root {
-    /* Override any colors you want to customize */
-    --primary-text: #your-color;
-    --background: #your-background;
-    --link-color: #your-link-color;
-    /* ... etc */
-}
-```
+copy an existing theme file (e.g., `dark.css`) and modify the CSS variables to create your own theme.
 
 ## Available Color Variables
 
@@ -99,39 +89,6 @@ To create a custom theme, create a new CSS file that overrides the CSS custom pr
 - `--warning`: Warning/caution state
 - `--error`: Error/danger state
 - `--info`: Information state
-
-## Example Themes
-
-### Dark Theme
-```html
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/themes/dark.css">
-```
-
-### Blue Theme  
-```html
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/themes/blue.css">
-```
-
-### Purple Theme
-```html
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/themes/purple.css">
-```
-
-### Custom Theme Example
-```css
-:root {
-    /* Purple theme example */
-    --primary-text: #2d1b69;
-    --background: #f8f4ff;
-    --link-color: #7209b7;
-    --link-hover: #560c87;
-    --blockquote-border: #7209b7;
-    --code-bg: #f0e6ff;
-}
-```
 
 ## Utility Classes
 
