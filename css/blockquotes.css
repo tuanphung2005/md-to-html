@@ -1,13 +1,13 @@
 /* blockquotes */
 blockquote {
-    background-color: #f8f9fa;
-    border-left: 4px solid #3498db;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--blockquote-border);
     margin: 1.5em 0;
     padding: 1em 1.5em;
     border-radius: 0 6px 6px 0;
     position: relative;
     font-style: italic;
-    color: #555;
+    color: var(--blockquote-text);
 }
 
 blockquote p {
@@ -24,7 +24,7 @@ blockquote p:last-child {
 blockquote::before {
     content: "\201C";
     font-size: 3em;
-    color: #3498db;
+    color: var(--blockquote-border);
     position: absolute;
     left: 0.5em;
     top: 0.1em;
@@ -33,11 +33,12 @@ blockquote::before {
 }
 
 blockquote blockquote {
-    border-left-color: #e74c3c;
-    background-color: #fdeded;
+    border-left-color: var(--error);
+    background-color: var(--background);
+    filter: brightness(0.98);
 }
 
 /* nested */
 blockquote blockquote::before {
-    color: #e74c3c;
+    color: var(--error);
 }

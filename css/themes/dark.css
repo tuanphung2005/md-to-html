@@ -1,0 +1,66 @@
+/* Dark Theme - Manual dark theme */
+:root {
+    /* Primary Colors */
+    --primary-text: #e1e1e1;
+    --secondary-text: #fff;
+    --tertiary-text: #bbb;
+    --background: #1a1a1a;
+    
+    /* Text Colors */
+    --text-strong: #fff;
+    --text-emphasis: #ccc;
+    
+    /* Shadow Colors */
+    --shadow-light: rgba(0, 0, 0, 0.4);
+    --shadow-medium: rgba(0, 0, 0, 0.5);
+    --shadow-dark: rgba(0, 0, 0, 0.7);
+    
+    /* Interactive Colors */
+    --link-color: #66d9ef;
+    --link-hover: #a6e22e;
+    --link-visited: #ae81ff;
+    
+    /* Border Colors */
+    --border-light: #444;
+    --border-medium: #555;
+    --border-dark: #666;
+    
+    /* Status Colors */
+    --success: #2ecc71;
+    --warning: #f1c40f;
+    --error: #e74c3c;
+    --info: #66d9ef;
+    
+    /* Code Colors */
+    --code-bg: #2d2d2d;
+    --code-border: #444;
+    --code-text: #ff6b9d;
+    
+    /* Table Colors */
+    --table-header-bg: #2d2d2d;
+    --table-border: #444;
+    --table-stripe: #252525;
+    
+    /* Blockquote Colors */
+    --blockquote-border: #66d9ef;
+    --blockquote-bg: #2d2d2d;
+    --blockquote-text: #ccc;
+}
+
+/* Additional dark theme specific overrides */
+.toc-level-6 a {
+    opacity: 0.7;
+}
+
+details summary:hover {
+    background-color: #3d3d3d;
+}
+
+blockquote blockquote {
+    background-color: #3d2d2d;
+    border-left-color: #ff6b9d;
+}
+
+blockquote blockquote::before {
+    color: #ff6b9d;
+}

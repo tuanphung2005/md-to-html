@@ -1,8 +1,8 @@
 /* toc */
 .table-of-contents {
     width: 280px;
-    background-color: #f8f9fa;
-    border-right: 1px solid #e9ecef;
+    background-color: var(--code-bg);
+    border-right: 1px solid var(--border-light);
     padding: 20px;
     position: fixed;
     top: 0;
@@ -16,13 +16,13 @@
 .table-of-contents h2 {
     margin-top: 0;
     margin-bottom: 1em;
-    color: #2c3e50;
+    color: var(--secondary-text);
     font-size: 1.25em;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--table-border);
     padding-bottom: 0.5em;
     position: sticky;
     top: 0;
-    background-color: #f8f9fa;
+    background-color: var(--code-bg);
     z-index: 101;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .toc-list a {
-    color: #495057;
+    color: var(--code-text);
     text-decoration: none;
     padding: 0.25em 0.5em;
     border-radius: 4px;
@@ -51,9 +51,9 @@
 }
 
 .toc-list a:hover {
-    background-color: #e9ecef;
-    color: #2c3e50;
-    border-bottom: 1px solid #dee2e6;
+    background-color: var(--border-light);
+    color: var(--secondary-text);
+    border-bottom: 1px solid var(--table-border);
 }
 
 .toc-level-1 a {
@@ -84,5 +84,6 @@
 .toc-level-6 a {
     padding-left: 5em;
     font-size: 0.8em;
-    color: #6c757d;
+    color: var(--tertiary-text);
+    opacity: 0.7;
 }

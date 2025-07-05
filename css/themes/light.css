@@ -1,0 +1,48 @@
+/* Light Theme - Default light appearance */
+:root {
+    /* Primary Colors */
+    --primary-text: #333;
+    --secondary-text: #2c3e50;
+    --tertiary-text: #34495e;
+    --background: #fff;
+    
+    /* Text Colors */
+    --text-strong: #2c3e50;
+    --text-emphasis: #34495e;
+    
+    /* Shadow Colors */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-dark: rgba(0, 0, 0, 0.25);
+    
+    /* Interactive Colors */
+    --link-color: #3498db;
+    --link-hover: #2980b9;
+    --link-visited: #8e44ad;
+    
+    /* Border Colors */
+    --border-light: #e1e8ed;
+    --border-medium: #c1c9d2;
+    --border-dark: #8492a6;
+    
+    /* Status Colors */
+    --success: #27ae60;
+    --warning: #f39c12;
+    --error: #e74c3c;
+    --info: #3498db;
+    
+    /* Code Colors */
+    --code-bg: #f8f9fa;
+    --code-border: #e9ecef;
+    --code-text: #495057;
+    
+    /* Table Colors */
+    --table-header-bg: #f8f9fa;
+    --table-border: #dee2e6;
+    --table-stripe: #f8f9fa;
+    
+    /* Blockquote Colors */
+    --blockquote-border: #3498db;
+    --blockquote-bg: #f8f9fa;
+    --blockquote-text: #495057;
+}
