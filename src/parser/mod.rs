@@ -8,7 +8,7 @@ pub mod blockquote;
 use crate::html::document::HtmlDocument;
 use toc::TableOfContents;
 
-pub fn markdown_to_html(markdown: &str) -> String {
+pub fn markdown_to_html(markdown: &str, theme: Option<&str>) -> String {
     let mut doc = HtmlDocument::new();
     let mut toc = TableOfContents::new();
     let lines: Vec<&str> = markdown.lines().collect();
@@ -59,6 +59,9 @@ pub fn markdown_to_html(markdown: &str) -> String {
             i += lines_consumed - 1;
         }
 
+        // more feats here
+        // ...
+
         // paragraph or inline content
         else {
             let paragraph = blocks::process_paragraph(line);
@@ -68,5 +71,5 @@ pub fn markdown_to_html(markdown: &str) -> String {
         i += 1;
     }
 
-    doc.to_html_with_toc(&toc)
+    doc.to_html(&toc, theme)
 }

@@ -15,11 +15,7 @@ impl HtmlDocument {
         self.content.push_str(html);
     }
 
-    pub fn to_html(&self) -> String {
-        self.to_html_with_toc(&TableOfContents::new())
-    }
-
-    pub fn to_html_with_toc(&self, toc: &TableOfContents) -> String {
+    pub fn to_html(&self, toc: &TableOfContents, theme: Option<&str>) -> String {
         let mut html = String::new();
         
         html.push_str("<!DOCTYPE html>\n");
@@ -29,8 +25,16 @@ impl HtmlDocument {
         html.push_str("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
         html.push_str("<title>Markdown to HTML</title>\n");
         html.push_str("<link rel=\"stylesheet\" href=\"css/main.css\">\n");
+        
+        // theme if specified
+        if let Some(theme_name) = theme {
+            html.push_str(&format!("<link rel=\"stylesheet\" href=\"css/themes/{}.css\">\n", theme_name));
+        }
+
+        
         html.push_str("</head>\n");
         html.push_str("<body>\n");
+        
         
         // toc as a sidebar
         let toc_html = toc.generate_html();
