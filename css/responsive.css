@@ -1,12 +1,24 @@
+@media (min-width: 1520px) {
+    .toc-content {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 320px;
+        max-width: 1520px;
+    }
+}
+
 /* inflate */
 @media (max-width: 768px) {
     body {
         flex-direction: column;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
     
     .table-of-contents {
         position: relative;
         width: 100%;
+        max-width: 100%;
         height: auto;
         border-right: none;
         border-bottom: 1px solid var(--border-light);
@@ -15,11 +27,18 @@
     
     .toc-content {
         margin-left: 0;
+        max-width: 100vw;
     }
     
     .content {
         padding: 15px;
         max-width: 100%;
+        min-width: 0;
+    }
+    
+    /* Mobile */
+    details, blockquote {
+        word-break: break-word;
     }
     
     h1 {

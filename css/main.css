@@ -1,6 +1,7 @@
 @import url('themes/light.css');
 @import url('base.css');
 @import url('typography.css');
+@import url('code.css');
 @import url('lists.css');
 @import url('toc.css');
 @import url('collapsible.css');

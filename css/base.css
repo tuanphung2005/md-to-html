@@ -8,6 +8,8 @@ body {
     background-color: var(--background);
     display: flex;
     min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .container {
@@ -20,7 +22,10 @@ body {
 .content {
     flex: 1;
     padding: 20px 40px 20px 20px;
-    max-width: calc(100% - 300px);
+    max-width: min(1200px, calc(100vw - 320px));
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* para */
@@ -64,33 +69,6 @@ a:hover {
 
 a:visited {
     color: var(--link-visited);
-}
-
-/* code */
-code {
-    background-color: var(--code-bg);
-    border: 1px solid var(--code-border);
-    color: var(--code-text);
-    padding: 0.125em 0.25em;
-    border-radius: 3px;
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    font-size: 0.875em;
-}
-
-pre {
-    background-color: var(--code-bg);
-    border: 1px solid var(--code-border);
-    color: var(--code-text);
-    padding: 1em;
-    border-radius: 5px;
-    overflow-x: auto;
-    margin: 1em 0;
-}
-
-pre code {
-    background: none;
-    border: none;
-    padding: 0;
 }
 
 /* utility classes for theming */

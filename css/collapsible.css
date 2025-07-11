@@ -4,6 +4,9 @@ details {
     border: 1px solid var(--border-light);
     border-radius: 6px;
     overflow: hidden;
+    max-width: fit-content;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 details summary {
@@ -15,6 +18,8 @@ details summary {
     border-bottom: 1px solid var(--border-light);
     transition: background-color 0.2s ease;
     user-select: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 details summary:hover {
