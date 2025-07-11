@@ -4,6 +4,7 @@ pub mod lists;
 pub mod toc;
 pub mod collapsible;
 pub mod blockquote;
+pub mod codeblock;
 
 use crate::html::document::HtmlDocument;
 use toc::TableOfContents;
@@ -47,6 +48,18 @@ pub fn markdown_to_html(markdown: &str, theme: Option<&str>) -> String {
                 i += lines_consumed - 1;
             } else {
                 // treat as regular paragraph if collapsible parsing fails
+                let paragraph = blocks::process_paragraph(line);
+                doc.add_content(&paragraph);
+            }
+        }
+        
+        // code blocks
+        else if codeblock::is_code_block_start(line) {
+            if let Some((code_html, lines_consumed)) = codeblock::process_code_block(&lines, i) {
+                doc.add_content(&code_html);
+                i += lines_consumed - 1;
+            } else {
+                // treat as regular paragraph if code block parsing fails
                 let paragraph = blocks::process_paragraph(line);
                 doc.add_content(&paragraph);
             }
