@@ -1,2 +1,4 @@
 /target
-.html
+*.html
+debug
+/out

@@ -1,0 +1,38 @@
+/* collapsible */
+details {
+    margin: 1em 0;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: fit-content;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+details summary {
+    background-color: var(--code-bg);
+    padding: 0.3em;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--primary-text);
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color 0.2s ease;
+    user-select: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+details summary:hover {
+    background-color: var(--border-light);
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details .details-content {
+    padding: 0;
+    background-color: var(--background);
+    color: var(--primary-text);
+    margin: 0 1em 0 1em;
+}

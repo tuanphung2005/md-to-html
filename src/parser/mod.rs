@@ -2,11 +2,14 @@ pub mod blocks;
 pub mod inline;
 pub mod lists;
 pub mod toc;
+pub mod collapsible;
+pub mod blockquote;
+pub mod codeblock;
 
 use crate::html::document::HtmlDocument;
 use toc::TableOfContents;
 
-pub fn markdown_to_html(markdown: &str) -> String {
+pub fn markdown_to_html(markdown: &str, theme: Option<&str>) -> String {
     let mut doc = HtmlDocument::new();
     let mut toc = TableOfContents::new();
     let lines: Vec<&str> = markdown.lines().collect();
@@ -37,6 +40,41 @@ pub fn markdown_to_html(markdown: &str) -> String {
             doc.add_content(&list_html);
             i += lines_consumed - 1;
         }
+
+        // collapsible sections
+        else if collapsible::is_collapsible_start(line) {
+            if let Some((collapsible_html, lines_consumed)) = collapsible::process_collapsible_block(&lines, i) {
+                doc.add_content(&collapsible_html);
+                i += lines_consumed - 1;
+            } else {
+                // treat as regular paragraph if collapsible parsing fails
+                let paragraph = blocks::process_paragraph(line);
+                doc.add_content(&paragraph);
+            }
+        }
+        
+        // code blocks
+        else if codeblock::is_code_block_start(line) {
+            if let Some((code_html, lines_consumed)) = codeblock::process_code_block(&lines, i) {
+                doc.add_content(&code_html);
+                i += lines_consumed - 1;
+            } else {
+                // treat as regular paragraph if code block parsing fails
+                let paragraph = blocks::process_paragraph(line);
+                doc.add_content(&paragraph);
+            }
+        }
+        
+        // blockquotes
+        else if blockquote::is_blockquote_start(line) {
+            let (blockquote_html, lines_consumed) = blockquote::process_blockquote(&lines, i);
+            doc.add_content(&blockquote_html);
+            i += lines_consumed - 1;
+        }
+
+        // more feats here
+        // ...
+
         // paragraph or inline content
         else {
             let paragraph = blocks::process_paragraph(line);
@@ -46,5 +84,5 @@ pub fn markdown_to_html(markdown: &str) -> String {
         i += 1;
     }
 
-    doc.to_html_with_toc(&toc)
+    doc.to_html(&toc, theme)
 }

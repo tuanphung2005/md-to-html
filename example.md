@@ -1,5 +1,14 @@
 # THIS IS EXAMPLE MARKDOWN FILE
 
+<details>
+  <summary>Collapsible Example</summary>
+    Hidden content inside a collapsible section.
+</details>
+
+# h1 THIS IS H1
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus enim vitae sagittis finibus. Quisque tristique euismod sapien non tincidunt. Integer condimentum risus eu magna mattis sodales. Curabitur dapibus, elit maximus tincidunt sagittis, arcu purus vulputate dui, in vestibulum diam nibh in ligula. Nunc vehicula nulla tincidunt neque suscipit accumsan. Donec sit amet ante in ex volutpat ultrices. Vivamus diam felis, tempus ut congue nec, lobortis ut libero. Fusce nisl risus, accumsan et justo sed, pulvinar varius libero. Vestibulum feugiat ultrices augue et suscipit.
+
 ## h2 THIS IS H2
 
 example content inside heading 2
@@ -13,6 +22,8 @@ example content inside heading 3
 example content inside heading 4
 
 ##### h5 THIS IS H5
+
+this is a text with footnote [^1]
 
 ###### h6 THIS IS H6
 
@@ -33,4 +44,10 @@ This is a paragraph with some **bold text** and *italic text*.
 
 ![This is an image](http://example.com/image.jpg)
 
+```javascript
+print("hello world");
+```
+
 `This is inline code`
+
+[^1] this should explain why i put that footnote
