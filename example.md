@@ -7,7 +7,7 @@
 
 # h1 THIS IS H1
 
-> a block quote
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus enim vitae sagittis finibus. Quisque tristique euismod sapien non tincidunt. Integer condimentum risus eu magna mattis sodales. Curabitur dapibus, elit maximus tincidunt sagittis, arcu purus vulputate dui, in vestibulum diam nibh in ligula. Nunc vehicula nulla tincidunt neque suscipit accumsan. Donec sit amet ante in ex volutpat ultrices. Vivamus diam felis, tempus ut congue nec, lobortis ut libero. Fusce nisl risus, accumsan et justo sed, pulvinar varius libero. Vestibulum feugiat ultrices augue et suscipit.
 
 ## h2 THIS IS H2
 
@@ -41,5 +41,9 @@ This is a paragraph with some **bold text** and *italic text*.
 [This is a link](http://example.com)
 
 ![This is an image](http://example.com/image.jpg)
+
+```bash
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus enim vitae sagittis finibus. Quisque tristique euismod sapien non tincidunt. Integer condimentum risus eu magna mattis sodales. Curabitur dapibus, elit maximus tincidunt sagittis, arcu purus vulputate dui, in vestibulum diam nibh in ligula. Nunc vehicula nulla tincidunt neque suscipit accumsan. Donec sit amet ante in ex volutpat ultrices. Vivamus diam felis, tempus ut congue nec, lobortis ut libero. Fusce nisl risus, accumsan et justo sed, pulvinar varius libero. Vestibulum feugiat ultrices augue et suscipit.
+```
 
 `This is inline code`
