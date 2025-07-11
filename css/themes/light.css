@@ -45,4 +45,14 @@
     --blockquote-border: #3498db;
     --blockquote-bg: #f8f9fa;
     --blockquote-text: #495057;
+    
+    /* Syntax Highlighting Token Colors */
+    --token-comment: #6a737d;
+    --token-punctuation: #24292e;
+    --token-number: #005cc5;
+    --token-string: #032f62;
+    --token-operator: #d73a49;
+    --token-keyword: #d73a49;
+    --token-function: #6f42c1;
+    --token-variable: #e36209;
 }
