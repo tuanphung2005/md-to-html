@@ -5,13 +5,16 @@ pub mod toc;
 pub mod collapsible;
 pub mod blockquote;
 pub mod codeblock;
+pub mod footnote;
 
 use crate::html::document::HtmlDocument;
 use toc::TableOfContents;
+use footnote::FootnoteManager;
 
 pub fn markdown_to_html(markdown: &str, theme: Option<&str>) -> String {
     let mut doc = HtmlDocument::new();
     let mut toc = TableOfContents::new();
+    let mut footnote_manager = FootnoteManager::new();
     let lines: Vec<&str> = markdown.lines().collect();
     let mut i = 0;
 
@@ -23,8 +26,14 @@ pub fn markdown_to_html(markdown: &str, theme: Option<&str>) -> String {
             continue;
         }
 
+        // footnote definitions
+        if footnote::is_footnote_definition(line) {
+            if let Some((id, content)) = footnote::parse_footnote_definition(line) {
+                footnote_manager.add_footnote(id, content);
+            }
+        }
         // headers and add to TOC
-        if let Some(header) = blocks::process_header(line) {
+        else if let Some(header) = blocks::process_header(line) {
             toc.add_header(&header);
             doc.add_content(&header.html);
         }
@@ -82,6 +91,16 @@ pub fn markdown_to_html(markdown: &str, theme: Option<&str>) -> String {
         }
 
         i += 1;
+    }
+
+    // Process footnote references in content and add footnotes section
+    if footnote_manager.has_footnotes() {
+        let current_content = doc.get_content();
+        let content_with_footnotes = footnote_manager.process_footnote_references(&current_content);
+        doc.set_content(content_with_footnotes);
+        
+        let footnote_section = footnote_manager.generate_footnote_section();
+        doc.add_content(&footnote_section);
     }
 
     doc.to_html(&toc, theme)

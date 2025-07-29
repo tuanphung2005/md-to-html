@@ -15,6 +15,14 @@ impl HtmlDocument {
         self.content.push_str(html);
     }
 
+    pub fn get_content(&self) -> &str {
+        &self.content
+    }
+
+    pub fn set_content(&mut self, content: String) {
+        self.content = content;
+    }
+
     pub fn to_html(&self, toc: &TableOfContents, theme: Option<&str>) -> String {
         let mut html = String::new();
         

@@ -1,0 +1,65 @@
+/* footnotes styling */
+.footnotes {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 2px solid var(--border-light);
+    font-size: 0.9em;
+    color: var(--tertiary-text);
+}
+
+.footnotes ol {
+    padding-left: 1.5em;
+    margin: 0;
+}
+
+.footnotes li {
+    margin-bottom: 0.8em;
+    line-height: 1.5;
+}
+
+.footnotes li p {
+    margin: 0;
+    display: inline;
+}
+
+/* footnote reference in text */
+.footnote-ref {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.footnote-ref:hover {
+    text-decoration: underline;
+    background-color: var(--code-bg);
+    border-radius: 2px;
+    padding: 1px 2px;
+}
+
+/* back reference in footnote */
+.footnote-backref {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-left: 0.5em;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.footnote-backref:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* mobile responsiveness */
+@media (max-width: 768px) {
+    .footnotes {
+        margin-top: 2em;
+        padding-top: 1em;
+        font-size: 0.85em;
+    }
+    
+    .footnote-ref {
+        font-size: 0.75em;
+    }
+}
