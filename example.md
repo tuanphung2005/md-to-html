@@ -23,7 +23,7 @@ example content inside heading 4
 
 ##### h5 THIS IS H5
 
-this is a text with footnote [^1]
+this is a text with footnote[^1]
 
 ###### h6 THIS IS H6
 
@@ -50,4 +50,4 @@ print("hello world");
 
 `This is inline code`
 
-[^1] this should explain why i put that footnote
+[^1]: this should explain why i put that footnote
